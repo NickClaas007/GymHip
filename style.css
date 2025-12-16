@@ -1,0 +1,309 @@
+/* ===== Grundlayout ===== */
+body {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  margin: 0;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== Header ===== */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;   /* genug Abstand links/rechts */
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  z-index: 100;
+  box-sizing: border-box;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 60px;
+  height: auto;
+}
+
+.school-name {
+  font-size: 24px;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+.menu-toggle {
+  display: none;
+}
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #3498db;
+}
+
+
+/* ===== Hero Section ===== */
+.hero {
+  position: relative;
+  /*margin-top: 80px; /* Platz für fixierten Header */
+}
+
+.hero-image {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  filter: brightness(70%);
+  display: block;
+}
+
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+.hero-text h2 {
+  font-size: 48px;
+  margin-bottom: 15px;
+}
+
+.hero-text p {
+  font-size: 20px;
+  margin-bottom: 25px;
+}
+
+.hero-title {
+  width: 100%;
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 5px; /* Abstand zwischen den Wörtern */
+  font-size: 18px;
+}
+
+.cta-button {
+  background: #3498db;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.cta-button:hover {
+  background: #2980b9;
+}
+
+
+/* ===== Welcome Section ===== */
+.headline {
+  font-size: 36px;
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+/* ===== Footer ===== */
+footer {
+  background: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+}
+
+.footer-img {
+  display: block;
+  width: calc(100% - 5px);
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1); /* korrigiert */
+  object-fit: cover;
+}
+
+.impressum-datenschutz {
+  color: white;
+  text-decoration: none;
+}
+/* ===== Content Block (Welcome + Icons) ===== */
+.content-block {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: calc(100% - 45px);
+  margin: 20px auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  background:white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.section {
+  display: none;
+  width: 90%;
+}
+.section.active {
+  display: block;
+  width: 90%;
+}
+
+/* Welcome Text */
+.kontakt-text,
+.impressum-text,
+.datenschutz-text,
+.welcome-text {
+  flex: 5;
+  padding: 20px;
+}
+
+.oeffnungszeiten-container {
+    display: flex;          /* nebeneinander */
+    flex-wrap: wrap;        /* erlaubt Umbruch bei kleiner Breite */
+    gap: 20px;              /* Abstand zwischen den Blöcken */
+}
+
+.oeffnungszeiten-block {
+    flex: 1 1 300px;        /* wächst, schrumpft, Mindestbreite */
+    background: #f9f9f9;    /* optional Hintergrund */
+    padding: 15px;
+    border-radius: 6px;
+}
+
+
+/* Icons standard: untereinander (Desktop) */
+.icon-block {
+  flex: 1;
+  display: flex;
+  flex-direction: column;   /* untereinander */
+  gap: 15px;
+  align-items: center;
+}
+
+.icon-block img {
+  display: block;   /* Bilder als Blockelemente */
+  width: 80px;
+  height: auto;
+  color: white;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 746px) {
+
+  /* ===== Navigation ===== */
+  .menu-toggle {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  .menu-toggle span {
+  width: 25px;
+  height: 3px;
+  background: #2c3e50;
+  display: block;
+  border-radius: 2px;
+}
+
+
+  nav {
+    display: none;
+    position: absolute;
+    top: 80px;
+    right: 0;
+    width: 100%;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 20px;
+    gap: 15px;
+  }
+
+  nav.active {
+    display: block;
+  }
+
+  /* ===== Content ===== */
+  .content-block {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .welcome-text {
+    padding: 10px;
+  }
+
+  .icon-block {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .icon-block img {
+    width: 60px;
+  }
+}
+
+
+
+@media (max-width: 480px) {
+  .hero-text h2 {
+    font-size: 16px;
+  }
+
+
+  .hero-text p {
+    font-size: 12px;
+  }
+
+  .icon-block img {
+    width: 40px;
+  }
+}
+
+.system-button {
+  border-color: white;
+  box-shadow: none;
+  border-radius: 8px;
+  background-color: white;
+}
+
+.icon-size-EP {
+  width: 20%;
+  height: 20%;
+}
