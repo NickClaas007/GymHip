@@ -181,6 +181,7 @@ footer {
 .welcome-text {
   flex: 5;
   padding: 20px;
+  width: 90%;
 }
 
 .oeffnungszeiten-container {
